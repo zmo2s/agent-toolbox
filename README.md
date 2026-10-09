@@ -1,52 +1,111 @@
-# ChatGPT / Codex good-commit Skill demo
+# Agent Toolbox
 
-A tiny Node.js project showing a repo-scoped Codex Skill that turns Git changes into clean Conventional Commit messages.
+A growing collection of reusable AI agent skills, policies, and workflows for everyday development. Start with clear commit messages and explicit security boundaries, then adapt the tools to your project.
 
-## Structure
+## What's included
 
-```text
-chatgpt-good-commit/
-├── .codex/skills/good-commit/SKILL.md
-├── src/todo.js
-├── test/todo.test.js
-├── package.json
-└── README.md
-```
+| Resource | Purpose |
+| --- | --- |
+| [Good Commit](.codex/skills/good-commit/SKILL.md) | Propose Conventional Commit messages with a scope and semantic emoji. |
+| [Security Guardian](SECURITY_GUARDIAN.md) | Define approval requirements, file access boundaries, and database access rules. |
+| [Project instructions](AGENTS.md) | Route the `/skill-commit` shortcut to the commit skill. |
+| [Todo demo](src/todo.js) | Provide a small JavaScript example for trying the commit workflow. |
 
-## Try it
+## Get started
 
 ```bash
-npm test
-git init
-git add .
-git commit -m "chore(core): 🔧 initialize demo"
+git clone https://github.com/zmo2s/agent-toolbox.git
+cd agent-toolbox
 ```
 
-Now edit `src/todo.js` or a test. In Codex, send:
+Explore the resources below, or copy the ones you need into your own project.
+
+## Security Guardian
+
+[SECURITY_GUARDIAN.md](SECURITY_GUARDIAN.md) describes a default-deny, least-privilege policy for agent-assisted work:
+
+- Explain each command's purpose, scope, and risks before requesting approval.
+- Require approval before file modifications and keep access within approved directories, including symlink targets.
+- Never silently rewrite Git history, install packages, run remote scripts, or disable security controls.
+- Require authorization for network access; prohibit deployment and external publishing under the policy as written.
+- Keep secrets out of responses and logs, and never use production credentials.
+- Access databases only through a configured user with database-enforced read-only permissions. If none is configured, stop without falling back to another account.
+- Report verified findings, suspected risks, and checks actually performed.
+
+### Use it in your project
+
+1. Copy `SECURITY_GUARDIAN.md` into your repository.
+2. Review the policy and define the approved directories and task scope.
+3. Explicitly instruct your agent to read and follow it before starting work.
+4. Configure actual filesystem, network, and database permissions to match your intended restrictions.
+
+Example instruction:
+
+> Read and follow SECURITY_GUARDIAN.md for this task. Limit file access to this repository. Explain proposed commands and changes, and wait for my approval before executing them.
+
+This file is a policy document, not an automatically activated skill or security control. It does not enforce permissions, prevent every unsafe action, or replace sandboxing and human review.
+
+## Good Commit
+
+The [Good Commit skill](.codex/skills/good-commit/SKILL.md) inspects Git changes and proposes a concrete message. A bare request does not authorize staging, committing, or pushing.
+
+Edit the todo demo or a test, then send:
 
 ```text
 /skill-commit
 ```
 
-The project's `AGENTS.md` routes this text shortcut to
-the skill. It prepares a commit message without staging or committing.
-This is a project instruction, not a native slash-menu autocomplete entry.
+The project's `AGENTS.md` routes this text shortcut to the skill. It is a project instruction, not a native slash-menu autocomplete entry.
 
 You can also ask:
 
-> Use the good-commit skill to prepare a commit for my current changes.
+> Use the good-commit skill to prepare a commit message for my current changes.
 
-Responses use blue markers (🔷 / 🔹) and your language to distinguish the
-proposal, changes, checks, and Git status. Every copyable commit subject uses
-`<type>(<scope>): <emoji> <description>`, with a mandatory emoji and a
-parenthesized scope such as `back`, `front`, `skills`, or `core`.
-The skill distinguishes staged and unstaged changes,
-flags breaking changes, and proposes separate commits for unrelated work.
+Responses use blue markers (🔷 / 🔹) to distinguish the proposal, changes, checks, and Git status. Every copyable commit subject uses:
 
-For a change that rejects blank todo titles, a good result is:
+```text
+<type>(<scope>): <emoji> <description>
+```
+
+For example:
 
 ```text
 fix(core): 🐛 reject empty todo titles
+docs(security): 📝 add guardian policy with read-only database rules
 ```
 
-The skill lives at `.codex/skills/good-commit/SKILL.md`, so it travels with this repository.
+The skill distinguishes staged and unstaged changes, flags breaking changes, and proposes separate commits for unrelated work.
+
+To reuse it, copy `.codex/skills/good-commit/SKILL.md` and merge the shortcut instructions from `AGENTS.md` into your project's existing instructions.
+
+## Run the demo tests
+
+With Node.js installed:
+
+```bash
+npm test
+```
+
+## Structure
+
+```text
+agent-toolbox/
+├── .codex/skills/good-commit/SKILL.md
+├── AGENTS.md
+├── SECURITY_GUARDIAN.md
+├── src/todo.js
+├── test/todo.test.js
+├── package.json
+├── LICENSE
+└── README.md
+```
+
+## Contributing
+
+Ideas, improvements, and pull requests are welcome! Help improve existing policies, add reusable skills, or share practical workflows.
+
+Keep each PR focused, explain the problem it solves, and include usage examples and any checks you performed. For security-related changes, describe what the policy asks an agent to do and which protections require external enforcement.
+
+## License
+
+See [LICENSE](LICENSE) for the license terms.
