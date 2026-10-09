@@ -105,6 +105,8 @@ agent-toolbox/
 
 Ideas, improvements, and pull requests are welcome! Help improve existing policies, add reusable skills, or share practical workflows.
 
+Start with the [contribution guide](CONTRIBUTING.md) for fork and branch instructions, skill structure, and checks before opening a PR. Small documentation fixes are welcome too.
+
 Keep each PR focused, explain the problem it solves, and include usage examples and any checks you performed. For security-related changes, describe what the policy asks an agent to do and which protections require external enforcement.
 
 ## License
