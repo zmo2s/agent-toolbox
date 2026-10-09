@@ -7,7 +7,7 @@ A growing collection of reusable AI agent skills, policies, and workflows for ev
 | Resource | Purpose |
 | --- | --- |
 | [Good Commit](.codex/skills/good-commit/SKILL.md) | Propose Conventional Commit messages with a scope and semantic emoji. |
-| [Security Guardian](.codex/SECURITY_GUARDIAN.md) | Define approval requirements, file access boundaries, and database access rules. |
+| [Security Guardian](.codex/skills/security-guardian/SKILL.md) | Define approval requirements, file access boundaries, and database access rules. |
 | [Project instructions](AGENTS.md) | Route the `/skill-commit` shortcut to the commit skill. |
 | [Todo demo](src/todo.js) | Provide a small JavaScript example for trying the commit workflow. |
 
@@ -22,7 +22,7 @@ Explore the resources below, or copy the ones you need into your own project.
 
 ## Security Guardian
 
-[SECURITY_GUARDIAN.md](.codex/SECURITY_GUARDIAN.md) describes a default-deny, least-privilege policy for agent-assisted work:
+The [Security Guardian skill](.codex/skills/security-guardian/SKILL.md) describes a default-deny, least-privilege policy for agent-assisted work:
 
 - Explain each command's purpose, scope, and risks before requesting approval.
 - Require approval before file modifications and keep access within approved directories, including symlink targets.
@@ -34,16 +34,16 @@ Explore the resources below, or copy the ones you need into your own project.
 
 ### Use it in your project
 
-1. Copy `.codex/SECURITY_GUARDIAN.md` into your repository's `.codex` folder.
+1. Copy `.codex/skills/security-guardian/` into your repository's `.codex/skills/` folder.
 2. Review the policy and define the approved directories and task scope.
 3. Explicitly instruct your agent to read and follow it before starting work.
 4. Configure actual filesystem, network, and database permissions to match your intended restrictions.
 
 Example instruction:
 
-> Read and follow .codex/SECURITY_GUARDIAN.md for this task. Limit file access to this repository. Explain proposed commands and changes, and wait for my approval before executing them.
+> Use the security-guardian skill at .codex/skills/security-guardian/SKILL.md for this task. Limit file access to this repository. Explain proposed commands and changes, and wait for my approval before executing them.
 
-This file is a policy document, not an automatically activated skill or security control. It does not enforce permissions, prevent every unsafe action, or replace sandboxing and human review.
+This skill provides policy instructions, not enforced security controls. It does not enforce permissions, prevent every unsafe action, or replace sandboxing and human review.
 
 ## Good Commit
 
@@ -90,9 +90,9 @@ npm test
 
 ```text
 agent-toolbox/
-├── .codex/
-│   ├── SECURITY_GUARDIAN.md
-│   └── skills/good-commit/SKILL.md
+├── .codex/skills/
+│   ├── good-commit/SKILL.md
+│   └── security-guardian/SKILL.md
 ├── AGENTS.md
 ├── src/todo.js
 ├── test/todo.test.js

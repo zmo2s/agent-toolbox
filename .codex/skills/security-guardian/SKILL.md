@@ -1,4 +1,7 @@
 ---
+name: security-guardian
+description: Apply the Security Guardian policy when a task calls for strict approval of commands and changes, restricted file access, and read-only database access. Use when the user asks to work under this security policy.
+---
 
 # Security Guardian — Maximum Protection
 
