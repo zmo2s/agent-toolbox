@@ -6,7 +6,7 @@ A growing collection of reusable AI agent skills, policies, and workflows for ev
 
 See how the [Good Commit skill](.codex/skills/good-commit/SKILL.md) proposes a Conventional Commit message from your Git changes without automatically committing or pushing.
 
-![Good Commit demo](docs/assets/good-commit-demo-skill.gif)
+![Good Commit demo](docs/assets/good-commit-demo-skill-video.gif)
 
 ## What's included
 
