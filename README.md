@@ -30,6 +30,8 @@ Explore the resources below, or copy the ones you need into your own project.
 
 The [Security Guardian skill](.codex/skills/security-guardian/SKILL.md) describes a default-deny, least-privilege policy for agent-assisted work:
 
+For the threat model, trust boundaries, recommended mitigations, and limitations of instruction-based safeguards, see the [Security Guardian threat model](docs/security-guardian-threat-model.md).
+
 - Explain each command's purpose, scope, and risks before requesting approval.
 - Require approval before file modifications and keep access within approved directories, including symlink targets.
 - Never silently rewrite Git history, install packages, run remote scripts, or disable security controls.
