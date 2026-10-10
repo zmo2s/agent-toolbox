@@ -2,6 +2,12 @@
 
 A growing collection of reusable AI agent skills, policies, and workflows for everyday development. Start with clear commit messages and explicit security boundaries, then adapt the tools to your project.
 
+## 🎬 Good Commit Demo
+
+See how the [Good Commit skill](.codex/skills/good-commit/SKILL.md) proposes a Conventional Commit message from your Git changes without automatically committing or pushing.
+
+![Good Commit demo](docs/assets/good-commit-demo-skill.gif)
+
 ## What's included
 
 | Resource | Purpose |
