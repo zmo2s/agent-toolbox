@@ -16,3 +16,15 @@ test("trims the title", () => {
 test("rejects an empty title", () => {
   assert.throws(() => addTodo("   "), /Todo title is required/);
 });
+
+test("rejects an undefined title", () => {
+  assert.throws(() => addTodo(undefined), /Todo title is required/);
+});
+
+test("rejects a null title", () => {
+  assert.throws(() => addTodo(null), /Todo title is required/);
+});
+
+test("rejects an empty string title", () => {
+  assert.throws(() => addTodo(""), /Todo title is required/);
+});
