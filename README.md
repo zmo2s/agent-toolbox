@@ -76,6 +76,9 @@ docs(security): 📝 add guardian policy with read-only database rules
 
 The skill distinguishes staged and unstaged changes, flags breaking changes, and proposes separate commits for unrelated work.
 
+See [the no-changes example](docs/examples/no-changes.md) for the response
+when the working tree is clean.
+
 To reuse it, copy `.codex/skills/good-commit/SKILL.md` and merge the shortcut instructions from `AGENTS.md` into your project's existing instructions.
 
 ## Run the demo tests
