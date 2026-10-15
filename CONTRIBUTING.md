@@ -4,6 +4,8 @@ Contributions and pull requests are welcome, including small documentation fixes
 
 ## Start with a focused change
 
+Read the [README](README.md) and the relevant skill's `SKILL.md` before starting. Check existing issues and pull requests to avoid duplicating work.
+
 - Fix unclear instructions or broken links.
 - Add examples showing how to use an existing skill.
 - Improve a security rule and explain the scenario it addresses.
@@ -33,7 +35,7 @@ For a large change, open an issue first to discuss the scope. Small fixes can go
    git push -u origin docs/your-change
    ```
 
-5. Open a pull request from your fork's branch into `zmo2s/agent-toolbox:main`. Explain the problem, your solution, and the checks you performed.
+5. Open a pull request from your fork's branch into `zmo2s/agent-toolbox:main`. Explain the problem, your solution, and the checks you performed. Link related issues and describe expected behavior with a concrete example when changing a skill.
 
 ## Adding or updating a skill
 
@@ -67,3 +69,7 @@ Security guidance should distinguish instructions for the agent from controls en
 Use commit subjects in the repository's format: `<type>(<scope>): <emoji> <description>`. The [Good Commit skill](.codex/skills/good-commit/SKILL.md) contains examples.
 
 Keep unrelated changes out of your PR. Maintainers may ask for revisions before merging; opening a PR does not automatically publish its changes on the default branch.
+
+## Give and receive feedback
+
+Be respectful and constructive when reviewing others' work. Explain the reason for a suggested change, ask questions when intent is unclear, and include reproduction steps for problems you find. When requesting a review, point out the behavior or instructions you would like someone to check.

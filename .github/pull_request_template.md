@@ -1,15 +1,14 @@
-## What does this change?
+## Summary
+<!-- Briefly describe what changed and why. -->
 
-Describe the problem and how this change addresses it. Link a related issue if one exists.
+## Related issue
+<!-- Link the related issue, for example: Closes #23 -->
 
-## How can someone use or review it?
+## Test evidence
+<!-- Describe the tests or checks you performed. If not applicable, explain why. -->
 
-Include a usage example for a new or changed skill. For security policy changes, explain any changes to approvals or access boundaries and what requires external enforcement.
+## Documentation impact
+<!-- Describe any documentation changes, or write "None". -->
 
-## Verification
-
-List checks actually performed and their results. Note any checks not performed or blocked, with a reason.
-
-- [ ] I kept this PR focused on one purpose.
-- [ ] I updated relevant documentation and links.
-- [ ] I checked that no credentials, secrets, or private data are included.
+## Security impact
+<!-- For changes to agent policies or permissions, describe the security impact. Otherwise, write "None". -->

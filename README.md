@@ -2,6 +2,12 @@
 
 A growing collection of reusable AI agent skills, policies, and workflows for everyday development. Start with clear commit messages and explicit security boundaries, then adapt the tools to your project.
 
+## 🎬 Good Commit Demo
+
+See how the [Good Commit skill](.codex/skills/good-commit/SKILL.md) proposes a Conventional Commit message from your Git changes without automatically committing or pushing.
+
+![Good Commit demo](docs/assets/good-commit-demo-skill-video.gif)
+
 ## What's included
 
 | Resource | Purpose |
@@ -23,6 +29,8 @@ Explore the resources below, or copy the ones you need into your own project.
 ## Security Guardian
 
 The [Security Guardian skill](.codex/skills/security-guardian/SKILL.md) describes a default-deny, least-privilege policy for agent-assisted work:
+
+For the threat model, trust boundaries, recommended mitigations, and limitations of instruction-based safeguards, see the [Security Guardian threat model](docs/security-guardian-threat-model.md).
 
 - Explain each command's purpose, scope, and risks before requesting approval.
 - Require approval before file modifications and keep access within approved directories, including symlink targets.
@@ -75,6 +83,9 @@ docs(security): 📝 add guardian policy with read-only database rules
 ```
 
 The skill distinguishes staged and unstaged changes, flags breaking changes, and proposes separate commits for unrelated work.
+
+See [the no-changes example](docs/examples/no-changes.md) for the response
+when the working tree is clean.
 
 To reuse it, copy `.codex/skills/good-commit/SKILL.md` and merge the shortcut instructions from `AGENTS.md` into your project's existing instructions.
 
