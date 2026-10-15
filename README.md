@@ -2,6 +2,40 @@
 
 A growing collection of reusable AI agent skills, policies, and workflows for everyday development. Start with clear commit messages and explicit security boundaries, then adapt the tools to your project.
 
+[Quick start](#quick-start) · [Start contributing](#start-contributing) · [Contribution guide](CONTRIBUTING.md)
+
+## Quick start
+
+Use an AI coding assistant that can read repository files and run Git commands. These skills are Markdown instructions; no package installation is needed. Node.js is only needed for the demo tests.
+
+1. Copy [`.codex/skills/good-commit/SKILL.md`](.codex/skills/good-commit/SKILL.md) into the same path in your own Git repository.
+2. Make a small change, such as clarifying a setup sentence in your README.
+3. Ask your assistant:
+
+   ```text
+   Read .codex/skills/good-commit/SKILL.md and propose a commit message for my current changes.
+   ```
+
+4. Review the proposed message. For that README edit, an illustrative result is:
+
+   ```text
+   docs(readme): 📝 clarify setup instructions
+   ```
+
+The proposal does not stage, commit, or push changes. If anything is staged, the message describes the staged patch only. To use `/skill-commit`, merge the shortcut instructions from [AGENTS.md](AGENTS.md) into your project's existing instructions.
+
+Read the [partially staged changes walkthrough](docs/examples/partially-staged-walkthrough.md) for a worked example.
+
+## Start contributing
+
+Small documentation fixes and first-time contributions are welcome. Start with the [contribution guide](CONTRIBUTING.md), check the issue discussion and existing PRs, then choose a focused task:
+
+- [Document a breaking-change commit and migration (#8)](https://github.com/zmo2s/agent-toolbox/issues/8).
+- [Show how to separate unrelated changes (#7)](https://github.com/zmo2s/agent-toolbox/issues/7).
+- [Explain read-only database access with a fictional example (#3)](https://github.com/zmo2s/agent-toolbox/issues/3).
+
+[Browse open beginner issues](https://github.com/zmo2s/agent-toolbox/issues?q=is%3Aissue%20is%3Aopen%20label%3A%22good%20first%20issue%22). Questions and documentation reviews are useful contributions too.
+
 ## 🎬 Good Commit Demo
 
 See how the [Good Commit skill](.codex/skills/good-commit/SKILL.md) proposes a Conventional Commit message from your Git changes without automatically committing or pushing.
